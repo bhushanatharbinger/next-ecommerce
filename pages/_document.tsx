@@ -3,31 +3,31 @@ import Document, { Head, Main, NextScript, DocumentInitialProps, DocumentContext
 import { GA_TRACKING_ID } from '../utils/gtag';
 
 interface DocumentProps extends DocumentInitialProps {
-  isProduction: boolean
+  isCourseion: boolean
 }
 
 export default class CustomDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentProps> {
     const initialProps = await Document.getInitialProps(ctx)
 
-    // Check if in production
-    const isProduction = process.env.NODE_ENV === 'production'
+    // Check if in courseion
+    const isCourseion = process.env.NODE_ENV === 'courseion'
 
     return {
       ...initialProps,
-      isProduction,
+      isCourseion,
     }
   }
 
   render() {
-    const { isProduction } = this.props
+    const { isCourseion } = this.props
 
     return (
       <html lang="en">
         <Head>
 
-          {/* We only want to add the scripts if in production */}
-          {isProduction && (
+          {/* We only want to add the scripts if in courseion */}
+          {isCourseion && (
             <Fragment>
               {/* Global Site Tag (gtag.js) - Google Analytics */}
               <script

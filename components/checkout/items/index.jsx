@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
+import { userUserProvider } from "context/user";
 
 const CheckoutItems = () => {
-  const { cartItems } = useSelector(state => state.cart);
+  const { user } = userUserProvider();
 
   return (
     <ul className="checkout-items">
-      {cartItems.map(item => (
+      {user?.cartItems?.map((item) => (
         <li className="checkout-item">
           <div className="checkout-item__content">
             <div className="checkout-item__img">
@@ -21,8 +21,7 @@ const CheckoutItems = () => {
         </li>
       ))}
     </ul>
-  )
+  );
 };
 
-  
-export default CheckoutItems
+export default CheckoutItems;

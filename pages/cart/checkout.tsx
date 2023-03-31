@@ -1,20 +1,16 @@
 import Layout from '../../layouts/Main';
-import { useSelector } from 'react-redux';
 import CheckoutStatus from '../../components/checkout-status';
 import CheckoutItems from '../../components/checkout/items';
-import { RootState } from 'store';
-
+import { useUserContext } from "context/user";
 const CheckoutPage = () => {
-
-  const priceTotal = useSelector((state: RootState) => {
-    const cartItems = state.cart.cartItems;
+  const {cartItems} = useUserContext()
+  const priceTotal = (() => {
     let totalPrice = 0;
     if(cartItems.length > 0) {
-      cartItems.map(item => totalPrice += item.price * item.count);
+      cartItems.map((item: { price: number; count: number; }) => totalPrice += item.price * item.count);
     }
-
     return totalPrice;
-  })
+  })()
 
   return (
     <Layout>

@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
 import CheckoutStatus from '../../components/checkout-status';
 import Item from './item';
-import { RootState } from 'store';
+import { useUserContext } from "context/user";
 
 const ShoppingCart = () => {
-  const { cartItems } = useSelector((state: RootState)  => state.cart);
+  const { cartItems } = useUserContext()
 
   const priceTotal = () => {
     let totalPrice = 0;
@@ -28,7 +27,7 @@ const ShoppingCart = () => {
             <table>
               <tbody>
                 <tr>
-                  <th style={{textAlign: 'left'}}>Product</th>
+                  <th style={{textAlign: 'left'}}>course</th>
                   <th>Color</th>
                   <th>Size</th>
                   <th>Ammount</th>
@@ -58,7 +57,7 @@ const ShoppingCart = () => {
         </div>
       
         <div className="cart-actions">
-          <a href="/products" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</a>
+          <a href="/courses" className="cart__btn-back"><i className="icon-left"></i> Continue Shopping</a>
           <input type="text" placeholder="Promo Code" className="cart__promo-code" />
 
           <div className="cart-actions__items-wrapper">

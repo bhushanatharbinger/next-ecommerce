@@ -1,54 +1,18 @@
-import { useDispatch } from 'react-redux';
-import { removeProduct, setCount } from 'store/reducers/cart';
-import { ProductStoreType } from 'types';
+import { useUserContext } from 'context/user';
+import { CourseStoreType } from 'types';
 
-const ShoppingCart = ({ thumb, name, id, color, size, count, price }: ProductStoreType) => {
-  const dispatch = useDispatch();
-
-  const removeFromCart = () => {
-    dispatch(removeProduct(
-      { 
-        thumb, 
-        name, 
-        id, 
-        color, 
-        size, 
-        count, 
-        price
-      }
-    ))
-  }
-
-  const setProductCount = (count: number) => {
-    if(count <= 0) {
-      return;
-    }
-
-    const payload = {
-      product: { 
-        thumb, 
-        name, 
-        id, 
-        color, 
-        size, 
-        count, 
-        price
-      },
-      count,
-    }
-
-    dispatch(setCount(payload))
-  }
+const ShoppingCart = ({ thumb, name, id, color, size, price }: CourseStoreType) => {
+ const {removeFromCart} = useUserContext()
 
   return (
     <tr>
       <td>
-        <div className="cart-product">
-          <div className="cart-product__img">
+        <div className="cart-course">
+          <div className="cart-course__img">
             <img src={thumb} alt="" />
           </div>
 
-          <div className="cart-product__content">
+          <div className="cart-course__content">
             <h3>{name}</h3>
             <p>#{id}</p>
           </div>
@@ -56,19 +20,8 @@ const ShoppingCart = ({ thumb, name, id, color, size, count, price }: ProductSto
       </td>
       <td className="cart-item-before" data-label="Color">{color}</td>
       <td className="cart-item-before" data-label="Size">{size}</td>
-      <td>
-        <div className="quantity-button">
-          <button type="button" onClick={() => setProductCount(count - 1)} className="quantity-button__btn">
-            -
-          </button>
-          <span>{ count }</span>
-          <button type="button" onClick={() => setProductCount(count + 1)} className="quantity-button__btn">
-            +
-          </button>
-        </div>
-      </td>
       <td>${price}</td>
-      <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart()}></i></td>
+      <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart(id)}></i></td>
     </tr>
   )
 };

@@ -16,7 +16,7 @@ export type ReviewType = {
   punctuation: number;
 }
 
-export type ProductType = {
+export type CourseType = {
   id: string;
   name: string;
   thumb: string;
@@ -31,7 +31,7 @@ export type ProductType = {
   reviews: ReviewType[];
 }
 
-export type ProductTypeList = {
+export type CourseTypeList = {
   id: string;
   name: string;
   price: string;
@@ -41,7 +41,7 @@ export type ProductTypeList = {
   currentPrice?: number;
 }
 
-export type ProductStoreType = {
+export type CourseStoreType = {
   id: string;
   name: string;
   thumb: string;
