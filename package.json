@@ -9,7 +9,10 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^9.0.1",
+    "auth-session": "0.0.7",
     "cookie": "^0.5.0",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "next": "^12.1.0",
     "rc-slider": "^9.3.1",

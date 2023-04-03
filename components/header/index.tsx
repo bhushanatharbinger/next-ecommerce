@@ -10,6 +10,7 @@ type HeaderType = {
 };
 
 const Header = ({ isErrorPage }: HeaderType) => {
+  const [hydrated, setHydrated] = useState(false);
   const router = useRouter();
   const { cartItems } = useUserContext();
   const arrayPaths = ["/"];
@@ -31,6 +32,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   };
 
   useEffect(() => {
+    setHydrated(true);
     if (!arrayPaths.includes(router.pathname) || isErrorPage) {
       return;
     }
@@ -104,9 +106,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <Link href="/cart">
             <button className="btn-cart">
               <i className="icon-cart"></i>
-              {cartItems?.length > 0 && (
-                <span className="btn-cart__count">{cartItems?.length}</span>
-              )}
+                {hydrated ?<span className="btn-cart__count">{cartItems?.length || 0}</span>:<></>}
             </button>
           </Link>
           <Link href="/login">

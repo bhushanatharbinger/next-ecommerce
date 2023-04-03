@@ -1,5 +1,6 @@
 import Layout from '../layouts/Main';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 import { useForm } from "react-hook-form";
 import { server } from '../utils/server'; 
 import { postData } from '../utils/services'; 
@@ -10,6 +11,7 @@ type LoginMail = {
 }
 
 const LoginPage = () => {
+  const route = useRouter()
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data: LoginMail) => {
@@ -17,8 +19,9 @@ const LoginPage = () => {
       email: data.email,
       password: data.password
     });
-
-    console.log(res);
+    if(res.user){
+      route.push('/admin')
+    }
   };
 
   return (
