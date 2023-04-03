@@ -1,10 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 
-// fake data
-import courses from '../../lib/db/data/courses';
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  setTimeout(() => {
-    res.status(200).json(courses);
-  }, 800);
-}
+import withMiddleware from 'lib/api/middlewares/withMiddleware';
+import catchErrors from 'lib/api/middlewares/catchErrors'
+import allowMethods from 'lib/api/middlewares/allowMethods'
+import {getAllCoursesHandler} from 'lib/api/controllers/courses'
+
+export default withMiddleware(catchErrors,allowMethods(['GET']),getAllCoursesHandler)

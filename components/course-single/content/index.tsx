@@ -28,7 +28,7 @@ const Content = ({ course }: CourseContent) => {
   return (
     <section className="course-content">
       <div className="course-content__intro">
-        <h5 className="course__id">Course ID:<br></br>{course.id}</h5>
+        <h5 className="course__id">Course ID: {course.id}</h5>
         <span className="course-on-sale">Sale</span>
         <h2 className="course__name">{course.name}</h2>
 

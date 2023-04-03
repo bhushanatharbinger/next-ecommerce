@@ -22,37 +22,39 @@ const CoursesFilter = (props: { filters: any; }) => {
         <div className="courses-filter__block">
           <button type="button">course type</button>
           <div className="courses-filter__block__content">
-            {filters?.map(type => (
+            {filters?.topic?.map((item:string) => (
               <Checkbox 
-                key={type.id} 
+                key={item} 
                 name="course-type" 
-                label={type.name} 
+                label={item} 
               />
             ))}
           </div>
         </div>
         
         <div className="courses-filter__block">
-          <button type="button">Size</button>
-          <div className="courses-filter__block__content checkbox-square-wrapper">
-            {filters?.map(type => (
-              <Checkbox 
-                type="square" 
-                key={type.id} 
-                name="course-size" 
-                label={type.label} />
+          <button type="button">Level</button>
+          <div className="courses-filter__block__content">
+            {filters?.level?.map((item:string) => (
+             <Checkbox 
+             key={item} 
+             name="course-level" 
+             label={item} 
+           />
             ))}
           </div>
         </div>
         
         <div className="courses-filter__block">
-          <button type="button">Color</button>
+          <button type="button">Language</button>
           <div className="courses-filter__block__content">
-            <div className="checkbox-color-wrapper">
-              {filters?.map(type => (
-                <CheckboxColor key={type.id} valueName={type.color} name="course-color" color={type.color} />
+              {filters?.language?.map((item:string) => (
+                <Checkbox 
+                key={item} 
+                name="course-language" 
+                label={item} 
+              />
               ))}
-            </div>
           </div>
         </div>
 

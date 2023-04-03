@@ -1,16 +1,13 @@
 export const courses = [
   {
     id: '1',
-    name: 'T-Shirt Summer Vibes',
+    name: 'React Native - The Practical Guide [2023]',
     price: 119.99,
     discount: 30,
-    quantityAvailable: 2,
-    category: 'T-shirt',
+    category: 'Javascript',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-1.jpg',
+      'https://img-c.udemycdn.com/course/240x135/1436092_2024_4.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -61,15 +58,12 @@ export const courses = [
   },
   {
     id: '2',
-    name: 'T-Shirt Summer Vibes',
+    name: 'Understanding TypeScript',
     price: 119.99,
-    quantityAvailable: 2,
-    category: 'T-shirt',
+    category: 'Typescript',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-2.jpg',
+      'https://img-c.udemycdn.com/course/240x135/947098_02ec_2.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -120,15 +114,12 @@ export const courses = [
   },
   {
     id: '3',
-    name: 'T-Shirt Summer Vibes',
+    name: 'Testing React with Jest and React Testing Library (RTL)',
     price: 119.99,
-    quantityAvailable: 2,
-    category: 'T-shirt',
+    category: 'Testing',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-3.jpg',
+      'https://img-c.udemycdn.com/course/240x135/3780436_e8b4_6.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -179,15 +170,12 @@ export const courses = [
   },
   {
     id: '4',
-    name: 'T-Shirt Summer Vibes',
+    name: 'Modern React with Redux [2023 Update]',
     price: 119.99,
-    quantityAvailable: 2,
-    category: 'T-shirt',
+    category: 'Javascript',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-4.jpg',
+      'https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -238,15 +226,12 @@ export const courses = [
   },
   {
     id: '5',
-    name: 'T-Shirt Summer Vibes',
+    name: 'NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)',
     price: 119.99,
-    quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-5.jpg',
+      'https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -297,16 +282,13 @@ export const courses = [
   },
   {
     id: '6',
-    name: 'T-Shirt Summer Vibes',
+    name: 'Microservices with Node JS and React',
     price: 119.99,
     discount: 30,
-    quantityAvailable: 2,
-    category: 'T-shirt',
+    category: 'Cloud Services',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '/images/courses/course-6.jpg',
+      'https://img-c.udemycdn.com/course/240x135/2887266_c696_5.jpg',
     ],
     punctuation: {
       countOpinions: 81,

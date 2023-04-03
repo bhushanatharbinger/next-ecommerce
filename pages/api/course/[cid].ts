@@ -1,13 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import withMiddleware from 'lib/api/middlewares/withMiddleware';
+import catchErrors from 'lib/api/middlewares/catchErrors'
+import allowMethods from 'lib/api/middlewares/allowMethods'
+import {getCourseByIdHandler} from 'lib/api/controllers/courses'
 
-// fake data
-import courses from '../../../lib/db/data/courses';
-
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  const {
-    query: { cid },
-  } = req
-
-  const course = courses.find(x => x.id === cid);
-  res.status(200).json(course);
-}
+export default withMiddleware(catchErrors,allowMethods(['GET']),getCourseByIdHandler)
